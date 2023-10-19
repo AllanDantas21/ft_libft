@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 15:08:59 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/19 16:32:24 by aldantas         ###   ########.fr       */
+/*   Created: 2023/10/19 16:14:22 by aldantas          #+#    #+#             */
+/*   Updated: 2023/10/19 16:28:41 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*#include <stdlib.h>
 #include <stdio.h>*/
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	*ft_calloc(size_t n, size_t size)
 {
+	char	*s;
+	char	*pos;
+
+	s = malloc(n * size);
+	if (!s)
+		return (NULL);
+	pos = s;
+	while (n--)
+		*s++ = '0';
+	return (pos);
 }
 /*int	main()
 {
-	char *s = "abacate";
-	printf("%s", ft_substr(s, 2, 3));
+	char *s;
+	s = ft_calloc(10, sizeof(char));
+	printf("%s", s);
 }*/

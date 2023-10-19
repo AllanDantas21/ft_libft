@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:31:17 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/19 15:43:51 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/19 16:43:49 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_calloc(size_t n, size_t size);
 
 #endif

@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 15:08:59 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/19 16:32:24 by aldantas         ###   ########.fr       */
+/*   Created: 2023/10/19 16:45:22 by aldantas          #+#    #+#             */
+/*   Updated: 2023/10/19 16:54:57 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <stdlib.h>
-#include <stdio.h>*/
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
+#include<stdio.h>
+
+size_t	strlcpy(char *dst, const char *src, size_t size);
+{	
 }
-/*int	main()
-{
-	char *s = "abacate";
-	printf("%s", ft_substr(s, 2, 3));
-}*/
