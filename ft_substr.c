@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 17:39:37 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/19 13:48:58 by aldantas         ###   ########.fr       */
+/*   Created: 2023/10/19 15:08:59 by aldantas          #+#    #+#             */
+/*   Updated: 2023/10/19 15:50:52 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <stdio.h>*/
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+#include <stdlib.h>
+#include <stdio.h>
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*d;
-	char	*s;
+	char *ns;
+	char *pos;
 
-	if (!dest)
+	if(s == NULL)
 		return (0);
-	d = (char *)dest;
-	s = (char *)src;
-	while (n--)
-		*d++ = *s++;
-	return (dest);
+	ns = malloc(sizeof(char) * len);
+	if(!ns)
+		return (0);
+	pos = ((char *)s + start);
+	while(len--)
+	{
+		*ns++ = *s++;
+	}
+	return(ns);
 }
-/*int	main()
+int	main()
 {
 	char *s = "abacate";
-	char d[20] = "BBBBBBBBBB";
-
-	ft_memcpy(d, s, 4);
-	printf("%s", d);
-}*/
+	printf("%s", ft_substr(s, 2, 3));
+}
