@@ -1,1 +1,1 @@
-name = {libft.a}
+
