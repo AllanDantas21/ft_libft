@@ -9,8 +9,7 @@
 /*   Updated: 2023/10/19 12:07:12 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <stdio.h>*/
-
+#include "libft.h"
 char	*ft_strchr(const char *str, int c)
 {
 	if (!str || !c)

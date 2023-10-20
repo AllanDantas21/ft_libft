@@ -9,15 +9,11 @@
 /*   Updated: 2023/10/19 12:10:22 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <unistd.h>
-#include <stdio.h>*/
-
+#include "libft.h"
 size_t	ft_strncmp(const char *s1, const char *s2, size_t n)
-{	
-	int		result;
+{
 	size_t	i;
 
-	result = 0;
 	i = 0;
 	while ((s1[i] != '\0' && i < n) || (s2[i] != '\0' && i < n))
 	{

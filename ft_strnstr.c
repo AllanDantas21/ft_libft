@@ -9,10 +9,7 @@
 /*   Updated: 2023/10/17 15:52:36 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*#include<unistd.h>
-#include<stdio.h>*/
-
+#include "libft.h"
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {	
 	int	i;
@@ -29,7 +26,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		i++;
 	}
 	if (little[c] == '\0')
-		return (&big[i - c]);
+		return ((char *)(&big[i - c]));
 	return (0);
 }
 /*int	main(void)

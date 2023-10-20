@@ -9,16 +9,14 @@
 /*   Updated: 2023/10/19 13:50:39 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <stdio.h>
-#include <string.h>*/
-
+#include "libft.h"
 void	*ft_memchr(const void *str, int c, size_t n)
 {
 	unsigned char	*a;
 
 	if (!str || !c)
 		return (0);
-	a = (char *)str;
+	a = (unsigned char *)str;
 	while (n--)
 	{
 		if (*a == c)

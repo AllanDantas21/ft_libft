@@ -9,10 +9,7 @@
 /*   Updated: 2023/10/17 14:43:49 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>*/
-
+#include "libft.h"
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s;
@@ -20,7 +17,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (0);
-	s = (char *)malloc(sizeof (char) * (strlen(s1) + strlen(s2) + 1));
+	s = (char *)malloc(sizeof (char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (s == NULL)
 		return (NULL);
 	pos = s;

@@ -9,9 +9,7 @@
 /*   Updated: 2023/10/17 14:18:21 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>*/
+#include "libft.h"
 char	*ft_strdup(const char *s1)
 {	
 	char	*s2;
@@ -19,7 +17,7 @@ char	*ft_strdup(const char *s1)
 
 	if (!s1)
 		return (NULL);
-	s2 = malloc(sizeof(char) * (strlen(s1) + 1));
+	s2 = malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (s2 == NULL)
 		return (NULL);
 	pos = s2;

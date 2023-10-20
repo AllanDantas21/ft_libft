@@ -9,7 +9,7 @@
 /*   Updated: 2023/10/20 14:58:45 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <unistd.h>*/
+#include "libft.h"
 void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)

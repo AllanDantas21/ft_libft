@@ -9,8 +9,4 @@
 /*   Updated: 2023/10/19 16:54:57 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
 
-size_t	strlcpy(char *dst, const char *src, size_t size);
-{	
-}

@@ -9,7 +9,7 @@
 /*   Updated: 2023/10/17 17:26:11 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <stdio.h>*/
+#include "libft.h"
 void	*ft_bzero(void *s, size_t n)
 {
 	unsigned char	*a;
