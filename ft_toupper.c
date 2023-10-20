@@ -9,8 +9,7 @@
 /*   Updated: 2023/10/17 14:44:16 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
+#include "libft.h"
 int	ft_toupper(int ch)
 {
 	if (ch >= 'a' && ch <= 'z')
