@@ -12,14 +12,18 @@
 #include "libft.h"
 size_t	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-
+	size_t 		i;
+	unsigned char	*one;
+	unsigned char	*two;
+	
 	i = 0;
-	while ((s1[i] != '\0' && i < n) || (s2[i] != '\0' && i < n))
+	one = (unsigned char *)s1;
+	two = (unsigned char *)s2;
+	while ((one[i] != '\0' && i < n) || (two[i] != '\0' && i < n))
 	{
-		if (s1[i] > s2[i])
+		if (one[i] > two[i])
 			return (1);
-		else if (s1[i] < s2[i])
+		else if (one[i] < two[i])
 			return (-1);
 		i++;
 	}
