@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+# ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
@@ -22,9 +22,9 @@ int		ft_isdigit(const int i);
 int		ft_isprint(const int i);
 void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strchr(const char *str, int c);
-char	*ft_strdup(const char *s1);
+char    *ft_strdup(char *s1);
 char	*ft_strjoin(char const *s1, char const *s2);
-size_t	strlcpy(char *dest, const char *src, size_t n);
+size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 size_t	ft_strlen(const char *str);
 size_t		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *str, int c);
@@ -38,5 +38,10 @@ void	*ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_calloc(size_t n, size_t size);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t  ft_strlcat(char *dest, char *src, size_t size);
 
 #endif

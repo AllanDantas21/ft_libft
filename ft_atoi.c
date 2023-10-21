@@ -17,7 +17,7 @@ int	ft_atoi(const char *str)
 
 	res = 0;
 	sign = 1;
-	if ((*str == 32) || (*str >= 9 && *str <= 13))
+	while ((*str == 32) || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -27,10 +27,10 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		res = res * 10 + *str - '0';
-		str++;
+		res *= 10; 
+		res += *str++ - '0';
 	}
-	return (res * sign);
+	return ((int)(res * sign));
 }
 /*
 int	main()

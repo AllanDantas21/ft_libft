@@ -1,12 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 16:45:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/19 16:54:57 by aldantas         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "libft.h"
+size_t	ft_strlcpy(char *dest,const char *src, size_t size)
+{
+	size_t len;
+
+	if (src == NULL)
+		return (0);
+	len = ft_strlen(src);
+	size -= 1;
+	if (size > 0)
+	{
+		while (*src && size--)
+			*dest++ = *src++;
+		*dest = '\0';
+	}
+	if(size == 0)
+		*dest = '\0';
+	return (len);
+}
 
