@@ -3,15 +3,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	char	*pos;
-	
-	if(!*s || !start || !len)
-		return (0);
-	str = (char *)malloc(len * sizeof(char));
-	if(str == NULL)
+	int	lcpy;
+
+	if (!s)
+		return (NULL);
+	lcpy = (int)(len - start);
+	str = (char *)malloc((len * sizeof(char)) + 1);
+	if (!str)
 		return (NULL);
 	pos = str;
-	len = len - start;
-	while(len--)
-		*str++ = s[start++];
+	while(lcpy > 0)
+	{
+		*str++ = (char)s[start++];
+		lcpy--;
+	}
+	*str = 0;
 	return(pos);
 }
