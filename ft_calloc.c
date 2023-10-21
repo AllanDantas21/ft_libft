@@ -10,9 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-/*int	main()
+void	*ft_calloc(size_t items, size_t size)
 {
-	char *s;
-	s = ft_calloc(10, sizeof(char));
-	printf("%s", s);
-}*/
+	char	*a;
+	char	*pos;
+	
+	a = malloc(items * size);
+	if(!a)
+		return (NULL);
+	pos = a;
+	while(items--)
+		*a++ = 0;
+	return (pos);
+
+}

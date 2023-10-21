@@ -6,15 +6,13 @@ size_t	ft_strlcpy(char *dest,const char *src, size_t size)
 	if (src == NULL)
 		return (0);
 	len = ft_strlen(src);
-	size -= 1;
 	if (size > 0)
-	{
+	{	
+		size -= 1;
 		while (*src && size--)
 			*dest++ = *src++;
 		*dest = '\0';
 	}
-	if(size == 0)
-		*dest = '\0';
 	return (len);
 }
 

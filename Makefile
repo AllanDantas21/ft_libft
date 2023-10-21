@@ -35,14 +35,16 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
 all: $(NAME)
+
+.o:	$(CFILES)
+	$(CC) $(CFLAGS) $(CFILES)
 	
 $(NAME): $(OFILES)
-	ar rcs $(NAME) $(OFILES) 
+	ar -cru $(NAME) $(OFILES) 
 clean:
 	rm -f $(OFILES)
 fclean:  
 	clean rm -f $(NAME)
-
 re: fclean all
 
 .PHONY:  all clean fclean re
