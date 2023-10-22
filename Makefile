@@ -20,7 +20,7 @@ $(OBJECTS): $(FILES)
 	$(CC) $(FLAGS) -c $(FILES)
 
 clean:
-	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
+	$(RM) $(OBJECTS)
 
 fclean: clean
 	$(RM) $(NAME)
