@@ -43,5 +43,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t  ft_strlcat(char *dest, char *src, size_t size);
+void    ft_putnbr_fd(int n, int fd);
 
 #endif
