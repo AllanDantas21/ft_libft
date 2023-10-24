@@ -10,12 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-static int	countNumbers(int n)
+static int	sizeNbr(int n)
 {	
 	int	count;
 	
 	count = 0;
+	if(n < 0)
+	{
+		n = -n;
+		count++;
+	}
 	while (n > 0)
 	{
 		count++;
@@ -26,35 +30,26 @@ static int	countNumbers(int n)
 
 char	*ft_itoa(int n)
 {	
-	int	i;
-	char *a;
+	char	*str;
+	int	sign;
+	int	len;
 
-	a = malloc(sizeof(char) * countNumbers(n));
-	if(!a)
-		return (NULL);
-	i = 0;
+	len = sizeNbr(n);
 	if (n < 0)
 	{
-		a[i] = '-';
-		i++;
+		sign = 1;
 		n = -n;
-		ft_itoa(n);
 	}
-	else if (n > 9)
-	{
-		ft_itoa(n / 10);
-		ft_itoa(n % 10);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	while(len--)
+	{	
+		str[len] = (n % 10) + '0';
+		n /= 10;
 	}
-	else if (n >= 0 && n <= 9)
-	{
-		n += '0';
-		a[i++] = n;
-	}
-	return (a);
-}
-int	main ()
-{	
-	char *a;
-	a = ft_itoa(21);
-	printf("%s", a);
+	if(sign == 1)
+		str[0] = '-';
+	return (str);
 }
