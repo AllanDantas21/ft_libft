@@ -6,10 +6,11 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:11:10 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/19 14:18:27 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:54:16 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 int	ft_atoi(const char *str)
 {
 	int	res;
@@ -27,7 +28,7 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		res *= 10; 
+		res *= 10;
 		res += *str++ - '0';
 	}
 	return ((int)(res * sign));

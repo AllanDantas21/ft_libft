@@ -6,14 +6,15 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:59:20 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/19 12:07:12 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:58:07 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 char	*ft_strchr(const char *str, int c)
 {
-	unsigned char *a;
-	
+	unsigned char	*a;
+
 	a = (unsigned char *) str;
 	while (*a)
 	{

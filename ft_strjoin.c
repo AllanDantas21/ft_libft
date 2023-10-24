@@ -6,10 +6,11 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:02:34 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/17 14:43:49 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:48:44 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s;
