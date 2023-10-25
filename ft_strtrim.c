@@ -10,16 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+static char	*find(const char *str, int c)
+{
+	unsigned char	*a;
+
+	a = (unsigned char *) str;
+	while (*a)
+	{
+		if (*a == (unsigned char)c)
+			return ((char *)(a));
+		a++;
+	}
+	if (*a == c)
+		return ((char *)(a));
+	return (NULL);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 	char	*s2;
 	char	*pos;
 
-	while (*s1 && ft_strchr(set, *s1))
-		*s1++;
+	while (*s1 && find(set, *s1))
+		s1++;
 	len = ft_strlen(s1);
-	while (*s1 && ft_strchr(set, s1[len--]));
+	while (*s1 && find(set, s1[len--]));
 	len += 2;
 	s2 = (char *)malloc(sizeof(char) * (len + 1));
 	if (!s2)
