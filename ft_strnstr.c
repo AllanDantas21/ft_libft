@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:49:12 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/17 15:52:36 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:36:13 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	c = 0;
+	if (len == 0)
+		return ((char *)big);
 	while ((big[i] != '\0' && little[c] != '\0') && len--)
 	{
 		if (big[i] == little[c])

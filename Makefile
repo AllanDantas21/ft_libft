@@ -9,7 +9,7 @@ FILES = ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 		ft_strjoin.c ft_strmapi.c ft_itoa.c ft_strtrim.c\
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJECTS = $(FILES:.c=.o)
-RM = rm -f
+RM = rm -rf
 
 all: $(NAME)
 
@@ -27,4 +27,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(FILES)
+	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
+
+.PHONY: all clean fclean re so

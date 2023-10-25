@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:54:37 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/23 16:48:23 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:30:06 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,8 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*pos;
 	int		lcpy;
 
-	if (!s)
-		return (NULL);
+	if (start >= len)
+		return (ft_strdup(""));
 	lcpy = (int)(len);
 	str = (char *)malloc((len * sizeof(char)) + 1);
 	if (!str)

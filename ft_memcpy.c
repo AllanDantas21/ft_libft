@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:39:37 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/19 13:48:58 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:31:23 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,8 +16,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*d;
 	char	*s;
 
-	if (!dest)
-		return (0);
+	if (!src && !dest)
+		return (dest);
 	d = (char *)dest;
 	s = (char *)src;
 	while (n--)

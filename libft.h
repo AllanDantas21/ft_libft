@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:31:17 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/24 14:32:06 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:53:07 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ size_t	ft_strlcat(char *dest, char *src, size_t size);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
-char    *ft_strtrim(char const *s1, char const *set);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif

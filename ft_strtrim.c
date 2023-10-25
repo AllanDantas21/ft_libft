@@ -6,10 +6,11 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:00:13 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/20 16:20:14 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:59:01 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 static char	*find(const char *str, int c)
 {
 	unsigned char	*a;
@@ -35,8 +36,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (*s1 && find(set, *s1))
 		s1++;
 	len = ft_strlen(s1);
-	while (*s1 && find(set, s1[len--]));
-	len += 2;
+	while (*s1 && find(set, s1[len]))
+		len--;
+	len += 1;
 	s2 = (char *)malloc(sizeof(char) * (len + 1));
 	if (!s2)
 		return (NULL);
@@ -48,5 +50,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 }
 /*int	main()
 {
-	printf("%s", ft_strtrim("xx batata   ", "x "));
+	printf("%s", ft_strtrim("xxxxbatataxxxx", "x"));
 }*/

@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:35:19 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/24 15:35:34 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:32:14 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,7 +21,7 @@ static int	sizenum(long n)
 		n = -n;
 		count++;
 	}
-	if (n == 0)
+	else if (n == 0)
 		return (1);
 	while (n > 0)
 	{
@@ -58,3 +58,8 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
+/*#include <stdio.h>
+int	main()
+{	
+	printf("%s", ft_itoa(-156));
+}*/

@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:56:50 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/23 16:32:45 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:42:53 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,8 +15,6 @@ void	*ft_bzero(void *s, size_t n)
 {
 	char	*a;
 
-	if (!s)
-		return (0);
 	a = s;
 	while (n--)
 		*a++ = 0;
