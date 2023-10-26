@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 14:52:45 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/26 17:28:05 by aldantas         ###   ########.fr       */
+/*   Created: 2023/10/26 16:22:58 by aldantas          #+#    #+#             */
+/*   Updated: 2023/10/26 17:25:07 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_putendl_fd(char *s, int fd)
-{
-	if (!s)
-		return ((void) NULL);
+static size_t	ft_countwords(char *s, char ch)
+{	
+	size_t	words;
+	unsigned int	i;
+
+	i = 0;
+	words = 0;
 	while (*s)
 	{
-		write (fd, s, 1);
+		if ((s[i] == ch) && (s[i + 1] != ch))
+			words++;
 		s++;
 	}
-	write (fd, "\n", 1);
+	return (words);
 }
-/*int	main()
+
+char **ft_split(char const *s, char c);
+
+int	main()
 {
-	ft_putendl_fd("abacate", 1);
-}*/
+	char *a = "pao de batata";
+	printf("%ld", ft_countwords(a, ' '));
+}
