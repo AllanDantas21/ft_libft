@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*pos;
 	int		lcpy;
 
+	if (!s)
+		return (NULL);
 	if (start >= len)
 		return (ft_strdup(""));
 	lcpy = (int)(len);

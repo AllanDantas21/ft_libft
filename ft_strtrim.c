@@ -32,7 +32,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	char	*s2;
 	char	*pos;
-
+	
+	if (!s1)
+		return (NULL);
 	while (*s1 && find(set, *s1))
 		s1++;
 	len = ft_strlen(s1);

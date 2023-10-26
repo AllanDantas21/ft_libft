@@ -13,6 +13,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s)
+		return((void)NULL);
 	while (*s)
 	{
 		write (fd, s, 1);

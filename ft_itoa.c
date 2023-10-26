@@ -39,6 +39,7 @@ char	*ft_itoa(int n)
 	int		len;
 
 	nb = n;
+	sign = 0;
 	len = sizenum(nb);
 	if (nb < 0)
 	{
