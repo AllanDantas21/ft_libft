@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:56:35 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/25 18:32:41 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/27 19:38:44 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	size_t	i;
 	size_t	len;
-	
+
 	if (size == 0)
 		return (ft_strlen(src));
 	i = 0;

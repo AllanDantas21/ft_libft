@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:22:58 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/26 17:25:07 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/27 19:36:36 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -40,17 +40,15 @@ char **ft_split(char const *s, char c)
 {
 	char 	**m;
 	size_t	wlen;
-	int	in_word;
-	int	i;
-	
-	if (!s)
+	int		in_word;
+	int		i;
+
+	if(!s)
 		return (NULL);
 	in_word = 0;
 	i = 0;
 	wlen = 0;
-	m = (char **)malloc((ft_countwords((char *)s, c) + 1) * sizeof(char *));
-	if (!m)
-		return (NULL);
+	m = (char **)ft_calloc((ft_countwords((char *)s, c) + 1) , sizeof(char *));
 	while(*s)
 	{
 		if (*s != c)
@@ -60,11 +58,14 @@ char **ft_split(char const *s, char c)
 		}
 		else if ((*s == c) && ((*s - 1) != c) && in_word == 1)
 		{
-			m[i] = ft_substr(s - wlen, 0, wlen);	
+			m[i] = ft_substr(s - wlen, 0, wlen);
+			if (!m[i])
+				return (NULL);
 			in_word = 0;
 			wlen = 0;
 			i++;
 		}
+
 		s++;
 	}
 	if (s[ft_strlen(s) - 1] && in_word == 1)
@@ -72,14 +73,13 @@ char **ft_split(char const *s, char c)
 	return (m);
 }
 
-int	main()
+/*int	main()
 {
-	char *a = "pao de batata ";
+	char *a = "pao de batata";
 	char **m;
 
 	m = ft_split(a, ' ');
 	printf("%s\n", m[0]);
 	printf("%s\n", m[1]);
 	printf("%s\n", m[2]);
-
-}
+}*/
