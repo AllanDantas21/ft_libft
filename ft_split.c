@@ -16,15 +16,23 @@ static size_t	ft_countwords(char *s, char ch)
 {	
 	size_t	words;
 	unsigned int	i;
+	unsigned int	in_word;
 
-	i = 0;
+	i = 1;
 	words = 0;
-	while (*s)
+	while (s[i])
 	{
-		if ((s[i] == ch) && (s[i + 1] != ch))
+		if (s[i] != ch)
+			in_word = 1;
+		if ((s[i] == ch) && (s[i - 1] != ch) && in_word == 1)
+		{
 			words++;
-		s++;
+			in_word = 0;
+		}
+		i++;
 	}
+	if (s[i - 1] && in_word == 0)
+		words--;
 	return (words);
 }
 
@@ -32,6 +40,6 @@ char **ft_split(char const *s, char c);
 
 int	main()
 {
-	char *a = "pao de batata";
+	char *a = " pao de  batata";
 	printf("%ld", ft_countwords(a, ' '));
 }
