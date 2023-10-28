@@ -22,7 +22,7 @@ char	*ft_strdup(const char *s1)
 	if (!s2)
 		return (NULL);
 	pos = s2;
-	while (*s1)
+	while (*str1)
 	{
 		*s2++ = *str1++;
 	}

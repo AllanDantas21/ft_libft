@@ -12,9 +12,9 @@
 #include "libft.h"
 #include <stdio.h>
 
-static size_t	ft_countwords(char *s, char ch)
+static size_t	ft_countwords(const char *s, char ch)
 {	
-	size_t	words;
+	size_t		words;
 	unsigned int	i;
 	unsigned int	in_word;
 
@@ -36,41 +36,56 @@ static size_t	ft_countwords(char *s, char ch)
 	return (words);
 }
 
+void	*ft_free(char **mat)
+{
+	while (*mat)
+		free(*mat);
+	free(mat);
+	return (NULL);
+}
+
+char	**ft_fillsplit(const char *s, char **mat, char c, int index)
+{
+	int	in_word;
+	size_t	wlen;
+
+	wlen = 0;
+	in_word = 0;
+        while(*s)
+        {
+	       	if (*s != c)
+                {
+                        wlen++;
+                        in_word = 1;
+                }
+                else if ((*s == c) && ((*s - 1) != c) && in_word == 1)
+                {
+                        mat[index++] = ft_substr(s - wlen, 0, wlen);
+			if (!mat)
+				ft_free(mat);
+                        in_word = 0;
+                        wlen = 0;
+                }
+                s++;
+        }
+        if (s[ft_strlen(s) - 1] && in_word == 1)
+                mat[index] = ft_substr(s - wlen, 0, wlen);
+	return (mat);
+}
+
 char **ft_split(char const *s, char c)
 {
-	char 	**m;
-	size_t	wlen;
-	int		in_word;
-	int		i;
-
-	if(!s)
+	char 	**matrix;
+	int	index;
+	
+	index = 0;
+	if(s == NULL)
 		return (NULL);
-	in_word = 0;
-	i = 0;
-	wlen = 0;
-	m = (char **)ft_calloc((ft_countwords((char *)s, c) + 1) , sizeof(char *));
-	while(*s)
-	{
-		if (*s != c)
-		{
-			wlen++;
-			in_word = 1;
-		}
-		else if ((*s == c) && ((*s - 1) != c) && in_word == 1)
-		{
-			m[i] = ft_substr(s - wlen, 0, wlen);
-			if (!m[i])
-				return (NULL);
-			in_word = 0;
-			wlen = 0;
-			i++;
-		}
-
-		s++;
-	}
-	if (s[ft_strlen(s) - 1] && in_word == 1)
-		m[i] = ft_substr(s - wlen, 0, wlen);
-	return (m);
+	matrix = (char **)ft_calloc((ft_countwords(s, c) + 1) , sizeof(char *));
+	if (!matrix)
+		return (NULL);
+	matrix = ft_fillsplit(s, matrix, c, index);
+	return (matrix);
 }
 
 /*int	main()

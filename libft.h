@@ -22,7 +22,7 @@ int		ft_isdigit(const int i);
 int		ft_isprint(const int i);
 void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strchr(const char *str, int c);
-char	*ft_strdup(char *s1);
+char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 size_t	ft_strlen(const char *str);
