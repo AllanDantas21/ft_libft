@@ -58,7 +58,7 @@ static  size_t	ft_lenword(const char *s, char c)
         return (0);
 }
 
-char *ft_search(const char *s, char c)
+static char	*ft_search(const char *s, char c)
 {	
 	if (!s)
 		return (NULL);
@@ -71,7 +71,7 @@ char *ft_search(const char *s, char c)
 	return (NULL);
 }
 
-char	**ft_fill(char const *s, char **mat, char c)
+static char	**ft_fill(char const *s, char **mat, char c)
 {
 	size_t	wlen;
 	int	i;
