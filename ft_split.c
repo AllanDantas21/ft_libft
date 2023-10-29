@@ -12,89 +12,116 @@
 #include "libft.h"
 #include <stdio.h>
 
-static size_t	ft_countwords(const char *s, char ch)
-{	
-	size_t		words;
-	unsigned int	i;
-	unsigned int	in_word;
+static size_t	ft_countword(char const *s, char c)
+{
+	size_t	count;
 
-	i = 1;
-	words = 0;
-	while (s[i])
+	if (!*s)
+		return (0);
+	count = 0;
+	while (*s)
 	{
-		if (s[i] != ch)
-			in_word = 1;
-		if ((s[i] == ch) && (s[i - 1] != ch) && in_word == 1)
-		{
-			words++;
-			in_word = 0;
-		}
-		i++;
+		while (*s == c)
+			s++;
+		if (*s)
+			count++;
+		while (*s != c && *s)
+			s++;
 	}
-	if (s[i] && in_word == 0)
-		words--;
-	return (words);
+	return (count);
 }
 
-void	*ft_free(char **mat)
+static void	*ft_free(char **mat)
 {
-	while (*mat)
-		free(*mat);
+	int	i;
+
+	i = 0;
+	while(i > 0)
+		free(mat[i--]);
 	free(mat);
 	return (NULL);
 }
 
-char	**ft_fillsplit(const char *s, char **mat, char c, int index)
+static  size_t	ft_lenword(const char *s, char c)
 {
-	int	in_word;
-	size_t	wlen;
+        size_t len;
 
-	wlen = 0;
-	in_word = 0;
+        len = 0;
+        if(!s)
+                return (0);
         while(*s)
         {
-	       	if (*s != c)
-                {
-                        wlen++;
-                        in_word = 1;
-                }
-                else if ((*s == c) && ((*s - 1) != c) && in_word == 1)
-                {
-                        mat[index++] = ft_substr(s - wlen, 0, wlen);
-			if (!mat)
-				ft_free(mat);
-                        in_word = 0;
-                        wlen = 0;
-                }
+                if (*s == c)
+                        return (len);
+                len++;
                 s++;
         }
-        if (s[ft_strlen(s) - 1] && in_word == 1)
-                mat[index] = ft_substr(s - wlen, 0, wlen);
+        return (0);
+}
+
+char *ft_search(const char *s, char c)
+{	
+	if (!s)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	return (NULL);
+}
+
+char	**ft_fill(char const *s, char **mat, char c)
+{
+	size_t	wlen;
+	int	i;
+
+	i = 0;
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (*s)
+		{
+			if (!ft_search(s, c))
+				wlen = ft_strlen(s);
+			else
+				wlen = ft_lenword(s, c);
+			mat[i++] = ft_substr(s, 0, wlen);
+			if (!mat)
+				{
+					ft_free(mat);
+					return (NULL);
+				}
+			s += wlen;
+		}
+	}
+	mat[i] = NULL;
 	return (mat);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char 	**matrix;
-	int	index;
-	
-	index = 0;
-	if(s == NULL)
-		return (NULL);
-	matrix = (char **)ft_calloc((ft_countwords(s, c) + 1) , sizeof(char *));
-	if (!matrix)
-		return (NULL);
-	matrix = ft_fillsplit(s, matrix, c, index);
-	return (matrix);
+	char	**mat;
+
+	mat = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
+	if (!mat)
+		return (0);
+	mat = ft_fill(s, mat, c);
+	return (mat);
 }
 
 /*int	main()
 {
-	char *a = "pao de batata";
+	char *a = " pao de batata";
 	char **m;
 
 	m = ft_split(a, ' ');
 	printf("%s\n", m[0]);
 	printf("%s\n", m[1]);
 	printf("%s\n", m[2]);
+	//printf("%s\n", m[3]);
+	//printf("%s\n", m[3]);
+	//rintf("%s\n", m[4]);
 }*/

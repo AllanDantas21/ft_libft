@@ -31,6 +31,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		*str++ = (char)s[start++];
 		lcpy--;
 	}
-	*str = 0;
+	*str = '\0';
 	return (pos);
 }
