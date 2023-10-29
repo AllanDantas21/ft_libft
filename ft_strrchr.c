@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_srchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	unsigned char	*a;
 
 	if (c > 127)
 		c %= 256;
-	a = (unsigned char *)&s[ft_slen(s)];
+	a = (unsigned char *)&s[ft_strlen(s)];
 	while (*s++)
 	{
 		if (*a == (unsigned char)c)
