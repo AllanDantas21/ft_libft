@@ -24,10 +24,3 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	}
 	return (NULL);
 }
-/*int	main()
-{	
-	char *p;
-	char ch[20] = "abacatee";
-	p = ft_memchr(ch, 'c', 8);
-	printf("%s", p);
-}*/

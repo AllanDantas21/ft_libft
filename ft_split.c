@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	ft_countword(char const *s, char c)
 {
@@ -112,17 +111,3 @@ char	**ft_split(char const *s, char c)
 	mat = ft_fill(s, mat, c);
 	return (mat);
 }
-
-/*int	main()
-{
-	char *a = " pao de batata";
-	char **m;
-
-	m = ft_split(a, ' ');
-	printf("%s\n", m[0]);
-	printf("%s\n", m[1]);
-	printf("%s\n", m[2]);
-	//printf("%s\n", m[3]);
-	//printf("%s\n", m[3]);
-	//rintf("%s\n", m[4]);
-}*/

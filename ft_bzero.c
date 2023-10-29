@@ -20,9 +20,3 @@ void	*ft_bzero(void *s, size_t n)
 		*a++ = 0;
 	return (s);
 }
-/*int	main()
-{
-	char a[10] = "aaaaaaaaaa";
-	ft_bzero(a, 5);
-	printf("%s", a);
-}*/

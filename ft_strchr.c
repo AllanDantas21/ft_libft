@@ -28,8 +28,3 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)(a));
 	return (NULL);
 }
-/*int	main ()
-{
-	char *c = "abaca";
-	printf("%s", ft_strchr(c, 'z'));
-}*/

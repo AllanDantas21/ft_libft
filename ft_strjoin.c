@@ -29,9 +29,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*s = '\0';
 	return (pos);
 }
-/*int	main()
-{
-	char *s1 = "abac";
-	char *s2 = "ate";
-	printf("%s", ft_strjoin(s1, s2));
-}*/

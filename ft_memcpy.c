@@ -24,11 +24,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		*d++ = *s++;
 	return (dest);
 }
-/*int	main()
-{
-	char *s = "abacate";
-	char d[20] = "BBBBBBBBBB";
-
-	ft_memcpy(d, s, 4);
-	printf("%s", d);
-}*/

@@ -20,9 +20,3 @@ void	*ft_memset(void *s, int c, size_t n)
 		*a++ = (unsigned char) c;
 	return (s);
 }
-/*int	main()
-{	
-	char a[40];
-	ft_memset(a, 'b', 15);
-	printf("%s\n", a);
-}*/

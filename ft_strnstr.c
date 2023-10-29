@@ -34,11 +34,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)(&big[i - c]));
 	return (0);
 }
-
-/*int	main(void)
-{
-	char string[] = "F_BD_CE_BD_EF_BF_BE_EF_BF_BD_EF__DD_EF_BF_BD";
-	char find[] = "_EF_BF_BE_E";
-
-	printf("%s", ft_strstr(string, find));
-}*/

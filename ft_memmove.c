@@ -34,11 +34,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*int	main()
-{
-	char d[20];
-	char *s = "abacaxito";
-
-	ft_memmove(d, s, 9);
-	printf("%s", d);
-}*/

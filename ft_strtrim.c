@@ -53,8 +53,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(s2, (char *)s1, len + 1);
 	return (s2);
 }
-
-/*int	main()
-{
-	printf("%s", ft_strtrim("xxxxbatataxxxx", "x"));
-}*/

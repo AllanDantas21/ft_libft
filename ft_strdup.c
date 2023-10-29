@@ -29,8 +29,3 @@ char	*ft_strdup(const char *s1)
 	*s2 = 0;
 	return (pos);
 }
-/*int	main()
-{
-	char *s1 = "abacate";
-	printf("%s", ft_strdup(s1));
-}*/
