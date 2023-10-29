@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isdigit(const int i)
+int	ft_isdigit(int i)
 {
 	return (i >= '0' && i <= '9');
 }

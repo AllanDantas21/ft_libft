@@ -11,25 +11,25 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	res;
 	int	sign;
 
 	res = 0;
 	sign = 1;
-	while ((*str == 32) || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
+	while ((*nptr == 32) || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (*str == '-')
+		if (*nptr == '-')
 			sign = -1;
-		str++;
+		nptr++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
 		res *= 10;
-		res += *str++ - '0';
+		res += *nptr++ - '0';
 	}
 	return ((int)(res * sign));
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isalnum(const int i)
+int	ft_isalnum(int i)
 {
 	return (((i >= 'a' && i <= 'z')
 			|| (i >= 'A' && i <= 'Z')) || (i >= '0' && i <= '9'));

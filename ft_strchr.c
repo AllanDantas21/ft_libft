@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_schr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_schr(const char *s, int c)
 {
 	unsigned char	*a;
 	
 	if (c > 127)
 		c %= 256;
-	a = (unsigned char *) str;
+	a = (unsigned char *) s;
 	while (*a)
 	{
 		if (*a == (unsigned char)c)
