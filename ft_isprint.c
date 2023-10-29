@@ -13,7 +13,5 @@
 
 int	ft_isprint(const int i)
 {
-	if (i >= 32 && i <= 126)
-		return (1);
-	return (0);
+	return (i >= 32 && i <= 126)
 }
