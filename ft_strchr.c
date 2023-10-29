@@ -14,7 +14,9 @@
 char	*ft_strchr(const char *str, int c)
 {
 	unsigned char	*a;
-
+	
+	if (c > 127)
+		c %= 256;
 	a = (unsigned char *) str;
 	while (*a)
 	{

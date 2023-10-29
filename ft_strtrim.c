@@ -31,9 +31,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 	char	*s2;
-	char	*pos;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
 	while (*s1 && find(set, *s1))
 		s1++;
@@ -44,12 +43,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s2 = (char *)malloc(sizeof(char) * (len + 1));
 	if (!s2)
 		return (NULL);
-	pos = s2;
-	while (len--)
-		*s2++ = *s1++;
-	*s2 = '\0';
-	return (pos);
+	ft_strlcpy(s2, (char *)s1, len + 1);
+	return (s2);
 }
+
 /*int	main()
 {
 	printf("%s", ft_strtrim("xxxxbatataxxxx", "x"));

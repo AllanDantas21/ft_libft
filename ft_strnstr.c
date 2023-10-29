@@ -32,8 +32,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	if (little[c] == '\0')
 		return ((char *)(&big[i - c]));
-	return (NULL);
+	return (0);
 }
+
 /*int	main(void)
 {
 	char string[] = "F_BD_CE_BD_EF_BF_BE_EF_BF_BD_EF__DD_EF_BF_BD";

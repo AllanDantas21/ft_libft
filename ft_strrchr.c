@@ -15,6 +15,8 @@ char	*ft_strrchr(const char *str, int c)
 {
 	unsigned char	*a;
 
+	if (c > 127)
+		c %= 256;
 	a = (unsigned char *)&str[ft_strlen(str)];
 	while (*str++)
 	{

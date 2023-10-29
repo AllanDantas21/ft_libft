@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*one;
@@ -20,12 +20,10 @@ size_t	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	one = (unsigned char *)s1;
 	two = (unsigned char *)s2;
-	while ((one[i] != '\0' && i < n) || (two[i] != '\0' && i < n))
+	while ((one[i] || two[i]) && i < n)
 	{
-		if (one[i] > two[i])
-			return (1);
-		else if (one[i] < two[i])
-			return (-1);
+		if (one[i] != two[i])
+			return (one[i] - two[i]);
 		i++;
 	}
 	return (0);
