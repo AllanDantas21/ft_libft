@@ -104,7 +104,8 @@ char	**ft_fill(char const *s, char **mat, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**mat;
-
+	if (!s)
+		return (NULL);
 	mat = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
 	if (!mat)
 		return (0);
