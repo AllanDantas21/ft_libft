@@ -35,7 +35,7 @@ static void	*ft_free(char **mat)
 	int	i;
 
 	i = 0;
-	while(i > 0)
+	while (i > 0)
 		free(mat[i--]);
 	free(mat);
 	return (NULL);
@@ -43,12 +43,12 @@ static void	*ft_free(char **mat)
 
 static  size_t	ft_lenword(const char *s, char c)
 {
-        size_t len;
+        size_t	len;
 
         len = 0;
-        if(!s)
+        if (!s)
                 return (0);
-        while(*s)
+        while (*s)
         {
                 if (*s == c)
                         return (len);
