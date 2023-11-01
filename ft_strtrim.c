@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:00:13 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/26 17:26:04 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/31 19:12:54 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	while (*s1)
-	{	
+	{
 		if (ft_find(((char)*s1), set) == 1)
 			s1++;
 		else
@@ -41,8 +41,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	len = ft_strlen(s1);
 	while (len != 0)
-	{	
-		if(ft_find(s1[len - 1], set) == 1)
+	{
+		if (ft_find(s1[len - 1], set) == 1)
 			len--;
 		else
 			break ;

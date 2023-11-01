@@ -6,20 +6,17 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:56:50 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/25 14:42:53 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:37:17 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
 	char	*a;
 
 	a = s;
-	while (n != 0)
-	{
+	while (n--)
 		*a++ = 0;
-		n--;
-	}
 	return (s);
 }

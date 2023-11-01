@@ -6,13 +6,13 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:35:19 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/25 18:32:14 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/31 19:12:14 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 static int	sizenum(long n)
-{	
+{
 	int	count;
 
 	count = 0;
@@ -32,7 +32,7 @@ static int	sizenum(long n)
 }
 
 char	*ft_itoa(int n)
-{	
+{
 	char	*str;
 	long	nb;
 	int		sign;

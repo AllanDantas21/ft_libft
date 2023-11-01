@@ -1,12 +1,12 @@
-/************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 16:22:58 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/27 19:36:36 by aldantas         ###   ########.fr       */
+/*   Created: 2023/10/30 14:38:13 by aldantas          #+#    #+#             */
+/*   Updated: 2023/10/30 14:46:43 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -41,40 +41,27 @@ static void	*ft_free(char **mat)
 	return (NULL);
 }
 
-static  size_t	ft_lenword(const char *s, char c)
+static size_t	ft_lenword(const char *s, char c)
 {
-        size_t	len;
+	size_t	len;
 
-        len = 0;
-        if (!s)
-                return (0);
-        while (*s)
-        {
-                if (*s == c)
-                        return (len);
-                len++;
-                s++;
-        }
-        return (0);
-}
-
-static char	*ft_search(const char *s, char c)
-{	
+	len = 0;
 	if (!s)
-		return (NULL);
+		return (0);
 	while (*s)
 	{
 		if (*s == c)
-			return ((char *)s);
+			return (len);
+		len++;
 		s++;
 	}
-	return (NULL);
+	return (0);
 }
 
 static char	**ft_fill(char const *s, char **mat, char c)
 {
 	size_t	wlen;
-	int	i;
+	int		i;
 
 	i = 0;
 	while (*s)
@@ -83,16 +70,16 @@ static char	**ft_fill(char const *s, char **mat, char c)
 			s++;
 		if (*s)
 		{
-			if (!ft_search(s, c))
+			if (!ft_strchr(s, c))
 				wlen = ft_strlen(s);
 			else
 				wlen = ft_lenword(s, c);
 			mat[i++] = ft_substr(s, 0, wlen);
 			if (!mat)
-				{
-					ft_free(mat);
-					return (NULL);
-				}
+			{
+				ft_free(mat);
+				return (NULL);
+			}
 			s += wlen;
 		}
 	}
@@ -103,6 +90,7 @@ static char	**ft_fill(char const *s, char **mat, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**mat;
+
 	if (!s)
 		return (NULL);
 	mat = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));

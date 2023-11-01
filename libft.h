@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:31:17 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/27 20:11:11 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/10/31 21:16:41 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,25 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int     ft_isalnum(const int i);
-int     ft_isalpha(const int i);
-int     ft_isascii(const int i);
-int     ft_isdigit(const int i);
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+int		ft_isalnum(const int i);
+int		ft_isalpha(const int i);
+int		ft_isascii(const int i);
+int		ft_isdigit(const int i);
 int		ft_isprint(const int i);
 int		ft_tolower(int c);
 int		ft_toupper(int ch);
 int		ft_atoi(const char *str);
-int     ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
-char    *ft_substr(char const *s, unsigned int start, size_t len);
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strrchr(const char *str, int c);
