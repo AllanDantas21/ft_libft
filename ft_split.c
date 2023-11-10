@@ -6,96 +6,67 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:38:13 by aldantas          #+#    #+#             */
-/*   Updated: 2023/10/30 14:46:43 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:15:23 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static size_t	ft_countword(char const *s, char c)
+static size_t	count_w(char const *s, char c)
 {
-	size_t	count;
+	size_t	words;
 
-	if (!*s)
+	if (!s)
 		return (0);
-	count = 0;
+	words = 0;
 	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (*s)
-			count++;
+			words++;
 		while (*s != c && *s)
 			s++;
 	}
-	return (count);
+	return (words);
 }
 
-static void	*ft_free(char **mat)
+static void	alloc_w(char const *s, char c, char **arr)
 {
-	int	i;
-
-	i = 0;
-	while (i > 0)
-		free(mat[i--]);
-	free(mat);
-	return (NULL);
-}
-
-static size_t	ft_lenword(const char *s, char c)
-{
-	size_t	len;
-
-	len = 0;
-	if (!s)
-		return (0);
-	while (*s)
-	{
-		if (*s == c)
-			return (len);
-		len++;
-		s++;
-	}
-	return (0);
-}
-
-static char	**ft_fill(char const *s, char **mat, char c)
-{
-	size_t	wlen;
+	size_t	letters;
 	int		i;
 
 	i = 0;
-	while (*s)
+	if (s)
 	{
-		while (*s == c && *s)
-			s++;
-		if (*s)
+		letters = 0;
+		while (*s)
 		{
-			if (!ft_strchr(s, c))
-				wlen = ft_strlen(s);
-			else
-				wlen = ft_lenword(s, c);
-			mat[i++] = ft_substr(s, 0, wlen);
-			if (!mat)
+			while (*s == c)
+				s++;
+			while (*s != c && *s)
 			{
-				ft_free(mat);
-				return (NULL);
+				letters++;
+				s++;
 			}
-			s += wlen;
+			arr[i] = ft_substr(s - letters, 0, letters);
+			i++;
+			letters = 0;
 		}
 	}
-	mat[i] = NULL;
-	return (mat);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**mat;
+	char	**arr;
+	size_t	words;
 
 	if (!s)
 		return (NULL);
-	mat = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
-	if (!mat)
-		return (0);
-	mat = ft_fill(s, mat, c);
-	return (mat);
+	words = count_w(s, c);
+	arr = (char **) malloc (sizeof(char *) * (words + 1));
+	if (!arr)
+		return (NULL);
+	alloc_w(s, c, arr);
+	arr[words] = 0;
+	return (arr);
 }
