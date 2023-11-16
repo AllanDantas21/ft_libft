@@ -30,8 +30,8 @@ Libft is a project for Standard C library override functions that should be done
 | [**ft\_memset**](ft_memset.c) | fills the first n bytes of the memory area pointed to by s with the constant byte c|
 | [**ft\_bzero**](ft_bzero.c) | erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes containing '\0') to that area.|
 | [**ft\_memcpy**](ft_memcpy.c) | copies n bytes from memory area src to memory area dest.  The memory areas must not overlap.  Use  memmove(3)  if the memory areas do overlap.
-| [**ft\_memccpy**](ft_memccpy.c) | copies no more than n bytes from memory area src to memory area dest, stopping when the character c is found. If the memory areas overlap, the results are undefined.|
-| [**ft\_memmove**](/ft_memmove.c) | copies n bytes from memory area src to memory area dest. The two strings may overlap; the copy is always done in a non-destructive manner.|
+| [**ft\_memccpy**](ft_striteri.c) |Applies the function ’f’ on each character ofthe string passed as argument, passing its index as first argument.|
+| [**ft\_memmove**](ft_memmove.c) | copies n bytes from memory area src to memory area dest. The two strings may overlap; the copy is always done in a non-destructive manner.|
 | [**ft\_memchr**](ft_memchr.c) |scans the initial n bytes of the memory area pointed to by s for the first instance of c.|
 | [**ft\_memcmp**](ft_memcmp.c) | function compares the first n bytes (each interpreted as unsigned char) of the memory areas s1 and s2.|
 | [**ft\_strlen**](ft_strlen.c) | The ft\_strlen() function computes and returns the length of the string s.|
@@ -64,12 +64,12 @@ Libft is a project for Standard C library override functions that should be done
 
 | Function | Description |
 | --- | --- |
-| [**ft\_lstnew**](https://github.com/vcwild/42-libft/tree/main/src/libft/ft_lstnew.c) | Allocates and returns a new element. The variable ’content’ is initialized with the value of the parameter ’content’. The variable ’next’ is initialized to NULL.|
-| [**ft\_lstadd_front**](https://github.com/vcwild/42-libft/tree/main/src/libft/ft_lstadd_front.c) | Adds the element ’new’ at the beginning of the list.|
-| [**ft\_lstsize**](https://github.com/vcwild/42-libft/tree/main/src/libft/ft_lstsize.c) | Counts the number of elements in a list.|
-| [**ft\_lstlast**](https://github.com/vcwild/42-libft/tree/main/src/libft/ft_lstlast.c) | Returns the last element of the list.|
-| [**ft\_lstadd_back**](https://github.com/vcwild/42-libft/tree/main/src/libft/ft_lstadd_back.c) | Adds the element ’new’ at the end of the list.|
-| [**ft\_lstdelone**](https://github.com/vcwild/42-libft/tree/main/src/libft/ft_lstdelone.c) | Takes as a parameter an element and frees the memory of the element’s content using the function ’del’ given as a parameter and free the element.|
-| [**ft\_lstclear**](https://github.com/vcwild/42-libft/tree/main/src/libft/ft_lstclear.c) | Deletes and frees the given element and every successor of that element, using the function ’del’ and free. Finally, the pointer to the list is set to NULL.|
-| [**ft\_lstiter**](https://github.com/vcwild/42-libft/tree/main/src/libft/ft_lstiter.c) | Iterates the list ’lst’ and applies the function ’f’ to the content of each element.|
-| [**ft\_lstmap**](https://github.com/vcwild/42-libft/tree/main/src/libft/ft_lstmap.c) | Iterates the list ’lst’ and applies the function ’f’ to the content of each element. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of an element if needed.|
+| [**ft\_lstnew**](ft_lstnew.c) | Allocates and returns a new element. The variable ’content’ is initialized with the value of the parameter ’content’. The variable ’next’ is initialized to NULL.|
+| [**ft\_lstadd_front**](ft_lstadd_front.c) | Adds the element ’new’ at the beginning of the list.|
+| [**ft\_lstsize**](ft_lstsize.c) | Counts the number of elements in a list.|
+| [**ft\_lstlast**](ft_lstlast.c) | Returns the last element of the list.|
+| [**ft\_lstadd_back**](ft_lstadd_back.c) | Adds the element ’new’ at the end of the list.|
+| [**ft\_lstdelone**](ft_lstdelone.c) | Takes as a parameter an element and frees the memory of the element’s content using the function ’del’ given as a parameter and free the element.|
+| [**ft\_lstclear**](ft_lstclear.c) | Deletes and frees the given element and every successor of that element, using the function ’del’ and free. Finally, the pointer to the list is set to NULL.|
+| [**ft\_lstiter**](ft_lstiter.c) | Iterates the list ’lst’ and applies the function ’f’ to the content of each element.|
+| [**ft\_lstmap**](ft_lstmap.c) | Iterates the list ’lst’ and applies the function ’f’ to the content of each element. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of an element if needed.|
