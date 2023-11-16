@@ -12,15 +12,14 @@ Libft is a project for Standard C library override functions that should be done
 * [Part 01](#part-01)
 * [Part 02](#part-02)
 * [Bonus Functions](#bonus-functions)
-* [Extras](#extras)
 * [Make](#make)
-* [License](#license)
+
 
 ### Part 01
 
 | Function | Description |
 | --- | --- |
-| [**ft\_isalpha**](https://github.com/Allandantas21/libft/tree/main/ft_isalpha.c) |checks for an alphabetic character.|
+| [**ft\_isalpha**](ft_isalpha.c) |checks for an alphabetic character.|
 | [**ft\_isdigit**](ft_isdigit.c) | checks for a digit (0 through 9).|
 | [**ft\_isalnum**](ft_isalnum.c) | checks for an alphanumeric character; it  is  equivalent  to (isalpha(c) || isdigit(c)).|
 | [**ft\_isascii**](ft_isascii.c) | checks  whether  c  is a 7-bit unsigned char value that fits into the ASCII character set. |
@@ -52,12 +51,12 @@ Libft is a project for Standard C library override functions that should be done
 | [**ft\_substr**](ft_substr.c) | Allocates and returns a substring from the string ’s’. The substring begins at index ’start’ and is of maximum size ’len’.|
 | [**ft\_strjoin**](ft_strjoin.c) | Allocates and returns a new string, which is the result of the concatenation of ’s1’ and ’s2’.|
 | [**ft\_strtrim**](ft_strtrim.c) | Allocates and returns a copy of ’s1’ with the characters specified in ’set’ removed from the beginning and the end of the string.|
-| [**ft\_split**](/ft_split.c) | Allocates and returns an array of strings obtained by splitting ’s’ using the character ’c’ as a delimiter.|
-| [**ft\_strmapi**](/ft_strmapi.c) | Applies the function ’f’ to each character of the string ’s’ to create a new string resulting from successive applications of ’f’.|
+| [**ft\_split**](ft_split.c) | Allocates and returns an array of strings obtained by splitting ’s’ using the character ’c’ as a delimiter.|
+| [**ft\_strmapi**](ft_strmapi.c) | Applies the function ’f’ to each character of the string ’s’ to create a new string resulting from successive applications of ’f’.|
 | [**ft\_itoa**](ft_itoa.c) | Allocates and returns a string representing the integer received as an argument. Negative numbers must be handled.|
-| [**ft\_putchar\_fd**](/ft_putchar_fd.c) | Outputs the character ’c’ to the given file descriptor.|
+| [**ft\_putchar\_fd**](ft_putchar_fd.c) | Outputs the character ’c’ to the given file descriptor.|
 | [**ft\_putstr\_fd**](ft_putstr_fd.c) | Outputs the string ’s’ to the given file descriptor.|
-| [**ft\_putendl\_fd**](/ft_putendl_fd.c) | Outputs the string ’s’ to the given file descriptor, followed by a newline.|
+| [**ft\_putendl\_fd**](ft_putendl_fd.c) | Outputs the string ’s’ to the given file descriptor, followed by a newline.|
 | [**ft\_putnbr\_fd**](ft_putnbr_fd.c) | Outputs the integer ’n’ to the given file descriptor.|
 
 ### Bonus Functions
