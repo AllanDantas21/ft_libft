@@ -29,7 +29,7 @@ Libft is a project for Standard C library override functions that should be done
 | [**ft\_memset**](ft_memset.c) | fills the first n bytes of the memory area pointed to by s with the constant byte c|
 | [**ft\_bzero**](ft_bzero.c) | erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes containing '\0') to that area.|
 | [**ft\_memcpy**](ft_memcpy.c) | copies n bytes from memory area src to memory area dest.  The memory areas must not overlap.  Use  memmove(3)  if the memory areas do overlap.
-| [**ft\_memccpy**](ft_striteri.c) |Applies the function ’f’ on each character ofthe string passed as argument, passing its index as first argument.|
+| [**ft\_striteri**](ft_striteri.c) |Applies the function ’f’ on each character ofthe string passed as argument, passing its index as first argument.|
 | [**ft\_memmove**](ft_memmove.c) | copies n bytes from memory area src to memory area dest. The two strings may overlap; the copy is always done in a non-destructive manner.|
 | [**ft\_memchr**](ft_memchr.c) |scans the initial n bytes of the memory area pointed to by s for the first instance of c.|
 | [**ft\_memcmp**](ft_memcmp.c) | function compares the first n bytes (each interpreted as unsigned char) of the memory areas s1 and s2.|
